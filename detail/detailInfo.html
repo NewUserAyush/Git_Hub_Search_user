@@ -1,0 +1,90 @@
+<div style="background-color:white" >
+<div ng-repeat="userRepo in userData" hide-xs>
+    <div ng-if="$even" layout="row"  layout-margin>
+            <md-list-item class="md-3-line md-whiteframe-1dp" flex  layout-padding>
+                <div class="md-list-item-text" layout="column" flex > 
+                 <div layout="row" layout-align="space-between">
+                        <p class="md-headline">{{ userData[$index].name }}</p>
+                        <md-button md-no-ink class="md-primary" ng-click="showAlert(userData[$index])">clone</md-button>
+                      </div>
+                    
+                    <div layout="row">
+                      <p ng-repeat="lang in userData[$index].language" ><i>{{lang}},</i></p>
+                    </div>      
+                      
+                    <div layout="row" layout-align="space-between">
+                        <div layout="row" layout-align="space-around" >
+                        
+                            <md-icon md-svg-icon="image/star.svg"></md-icon>
+                          
+                          <span style="margin-left:10px;margin-top:3px;">{{userData[$index].stargazers_count }}</span>
+                        </div>
+                          <a ng-href="{{'https://codeload.github.com/'+userData[$index].full_name+'/zip/master'}}" download>
+                            Download
+                            </a>
+                     </div>
+                  </div>
+            </md-list-item>
+            
+             <md-list-item class="md-3-line md-whiteframe-1dp" flex ng-if="($index+1)<userData.length" layout-padding>
+               
+                  <div class="md-list-item-text" layout="column" flex > 
+                   
+                    <div layout="row" layout-align="space-between">
+                        <p class="md-headline">{{ userData[$index+1].name }}</p>
+                        <md-button md-no-ink class="md-primary" ng-click="showAlert(userData[$index])">clone</md-button>
+                      </div>
+                      
+                      <div layout="row">
+                      <p ng-repeat="lang in userData[$index+1].language" ><i>{{lang}},</i></p>
+                    </div>  
+                      
+                        <div layout="row" layout-align="space-between">
+                          <div layout="row" layout-align="space-around" >
+                        
+                            <md-icon md-svg-icon="image/star.svg"></md-icon>
+                          
+                          <span style="margin-left:10px;margin-top:3px;">{{userData[$index+1].stargazers_count }}</span>
+                        </div>
+                          <a ng-href="{{'https://codeload.github.com/'+userData[$index+1].full_name+'/zip/master'}}" download>
+                            Download
+                            </a>
+                     </div>
+                  </div>
+            </md-list-item>
+        
+            <md-divider></md-divider>
+        </div>
+</div>
+
+<div ng-repeat="userRepo in userData" show-xs hide-gt-sm layout-margin >
+    
+            <md-list-item class="md-3-line md-whiteframe-1dp" flex layout-padding>
+                <div class="md-list-item-text" layout="column" flex > 
+                 <div layout="row" layout-align="space-between">
+                        <p class="md-headline">{{ userData[$index].name }}</p>
+                        <md-button md-no-ink class="md-primary" ng-click="showAlert(userData[$index])">clone</md-button>
+                      </div>
+                    
+                    <div layout="row">
+                      <p ng-repeat="lang in userData[$index].language" ><i>{{lang}},</i></p>
+                    </div>      
+                      
+                    <div layout="row" layout-align="space-between">
+                         <div layout="row" layout-align="space-around" >
+                        
+                            <md-icon md-svg-icon="image/star.svg" flex></md-icon>
+                          
+                          <span style="margin-left:10px;margin-top:3px;" flex>{{userData[$index].stargazers_count }}</span>
+                        </div>
+                          <a ng-href="{{'https://codeload.github.com/'+userData[$index].full_name+'/zip/master'}}" download>
+                            Download
+                            </a>
+                     </div>
+                  </div>
+            </md-list-item>
+            <md-divider></md-divider>
+      
+</div>
+    
+</div>

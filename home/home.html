@@ -1,0 +1,62 @@
+<div ng-controller="HomeCtrl" style="background-color:white">
+    
+    <div layout="row" layout-align="center center" layout-margin style="margin-top:100px" ng-show="!UserInfo">
+
+               <md-input-container flex="50" style="margin-top:35px">
+              <label>Github User Name</label>
+              <input required name="GUser" ng-model="user">
+              <div ng-messages="projectForm.clientName.$error">
+                <div ng-message="required">User Name Require</div>
+              </div>
+            </md-input-container>
+            <md-button class="md-raised md-primary" ng-click="serachuser(user)">Search</md-button>
+
+    </div>
+    
+    <div ng-show="UserInfo"> 
+       
+<!--        <md-content>-->
+      <md-list flex>
+        
+    <div  ng-repeat="uinfo in UserInfo" hide-xs>
+        <div ng-if="$even" layout="row" layout-margin >
+            <md-list-item class="md-3-line md-whiteframe-1dp" flex ng-click="getDetailInformation(UserInfo[$index])">
+                <img ng-src="{{UserInfo[$index].avatar_url}}?{{$index}}" class="md-avatar" />
+                  <div class="md-list-item-text" layout="column" flex > 
+                    <h3>{{UserInfo[$index].login }}</h3>
+                    
+                    <p>id- {{UserInfo[$index].id}}</p>
+                  </div>
+            </md-list-item>
+            
+             <md-list-item class="md-3-line md-whiteframe-1dp" flex ng-if="($index+1)<UserInfo.length" ng-click="getDetailInformation(UserInfo[$index+1])">
+                <img ng-src="{{UserInfo[$index+1].avatar_url}}?{{$index+1}}" class="md-avatar" />
+                  <div class="md-list-item-text" layout="column" flex > 
+                    <h3>{{ UserInfo[$index+1].login }}</h3>
+                    
+                    <p>id- {{UserInfo[$index+1].id}}</p>
+                  </div>
+            </md-list-item>
+        
+            <md-divider></md-divider>
+        </div>
+    </div>
+           <div  ng-repeat="uinfo in UserInfo"  show-xs hide-gt-sm layout-margin>
+       
+            <md-list-item class="md-3-line md-whiteframe-1dp" flex ng-click="getDetailInformation(UserInfo[$index])">
+                <img ng-src="{{UserInfo[$index].avatar_url}}?{{$index}}" class="md-avatar" />
+                  <div class="md-list-item-text" layout="column" flex > 
+                    <h3>{{UserInfo[$index].login }}</h3>
+                    
+                    <p>id- {{UserInfo[$index].id}}</p>
+                  </div>
+            </md-list-item>
+            
+        <md-divider></md-divider>
+            
+          </div>
+        
+        </md-list>
+       
+    </div>
+</div>

@@ -1,0 +1,35 @@
+{
+  "name": "GitHub User Search",
+  "short_name": "GitUser",
+  "icons": [{
+        "src": "image/icon.png",
+        "type": "image/png",
+        "sizes": "128x128"
+      }, {
+        "src": "image/icon3.png",
+        "type": "image/png",
+        "sizes": "152x152"
+      }, {
+        "src": "image/icon3.png",
+        "type": "image/png",
+        "sizes": "144x144"
+      }, {
+        "src": "image/icon3.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "image/icon3.png",
+        "type": "image/png",
+        "sizes": "256x256"
+      },
+      {
+        "src": "image/icon2.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }],
+"start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#566573",
+  "theme_color": "#82E0AA  "
+}
